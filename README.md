@@ -15,9 +15,29 @@ For more information on how to this works with other frontends/backends, head ov
 
 # How it works
 
-> Describe the general architecture of your app here
+Find more information about how to start with phel in [getting started](https://phel-lang.org/documentation/getting-started/).
 
 # Getting started
 
-> npm install, npm start, etc.
+## Requirements
 
+Phel requires at least PHP 8.0 and Composer.
+
+### Locally
+
+1. Ensure you have PHP >=8.0 (Some help about how to install multiple PHP versions locally on [linux](https://github.com/phpbrew/phpbrew) and [Mac](https://github.com/shivammathur/homebrew-php))
+1. Ensure you have [composer](https://getcomposer.org/composer-stable.phar)
+1. Clone this repo
+1. Install the dependencies | `composer install`
+
+## Phel code
+
+1. Write your phel code in `src/`
+2. Execute your web server with
+   - `composer run:dev`: it will recompile the code on every request
+   - `composer run:prod`: it will run the same compiled code on every request
+
+## Tests
+
+1. Write your phel tests in `tests/`
+1. Execute your tests with `composer test`

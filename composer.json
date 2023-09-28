@@ -1,0 +1,31 @@
+{
+  "name": "em-ak/realworld-backend-phel",
+  "keywords": [
+    "phel",
+    "lisp",
+    "functional",
+    "language"
+  ],
+  "homepage": "https://github.com/Em-AK/realworld-backend-phel",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.0",
+    "phel-lang/phel-lang": "^0.10",
+    "phel-lang/router": "^0.1"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "PhelGenerated\\": "src/PhelGenerated"
+    }
+  },
+  "scripts": {
+    "run:dev": "PHEL_MODE=slow php -S localhost:8080 -t public",
+    "run:prod": "composer build && php -S localhost:8080 -t public",
+    "build": "vendor/bin/phel build --no-cache",
+    "format": "vendor/bin/phel format",
+    "test": "vendor/bin/phel test"
+  }
+}
