@@ -25,6 +25,7 @@
     "run:dev": "PHEL_MODE=slow php -S localhost:8080 -t public",
     "run:prod": "composer build && php -S localhost:8080 -t public",
     "build": "vendor/bin/phel build --no-cache",
+    "repl": "vendor/bin/phel repl",
     "format": "vendor/bin/phel format",
     "test": "vendor/bin/phel test"
   }
