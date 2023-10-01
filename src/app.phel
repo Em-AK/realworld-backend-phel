@@ -1,5 +1,6 @@
 (ns realworld\app
   (:require realworld\controller\routes)
+  (:require realworld\controller\api)
   (:require phel\router :as r)
   (:require phel\http :as h))
 
@@ -9,7 +10,9 @@
     [["/" {:handler routes/index-handler}]
      ["/ping" {:name ::ping
                :get {:handler routes/ping-handler}
-               :post {:handler routes/ping-handler}}]])))
+               :post {:handler routes/ping-handler}}]
+     ["/api"
+      ["/tags" {:get {:handler api/list-tags}}]]])))
 
 (when-not *build-mode*
   (h/emit-response (app (h/request-from-globals))))
