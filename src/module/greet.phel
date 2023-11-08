@@ -1,4 +1,0 @@
-(ns realworld\module\greet)
-
-(defn greet [name]
-  (str "Hello, " name))
