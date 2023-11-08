@@ -1,5 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+node_modules/
+db/*.sqlite*
 data/
 out/
 PhelGenerated/
@@ -9,7 +11,6 @@ vendor/
 *.cache
 .phel-repl-history
 phel-config-local.php
-composer.lock
 gacela*.php
 
 # IDEs and editors

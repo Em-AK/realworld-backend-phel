@@ -37,6 +37,24 @@ Phel requires at least PHP 8.0 and Composer.
    - `composer run:dev`: it will recompile the code on every request
    - `composer run:prod`: it will run the same compiled code on every request
 
+## Database schema with Prisma Migrate
+
+Install [prisma](https://www.prisma.io/docs/concepts/components/prisma-migrate) as a dev dependency with npm
+
+```sh
+npm install
+```
+
+Use prisma [db push](https://www.prisma.io/docs/reference/api-reference/command-reference#db-push) or [migrate dev](https://www.prisma.io/docs/reference/api-reference/command-reference#migrate-dev) commands
+
+```sh
+# schema prototyping
+npx prisma db push
+
+# schema migrations
+npx prisma migrate dev
+```
+
 ## Tests
 
 1. Write your phel tests in `tests/`
