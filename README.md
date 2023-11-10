@@ -12,6 +12,28 @@ We've gone to great lengths to adhere to the **Phel** community styleguides & be
 
 For more information on how to this works with other frontends/backends, head over to the [RealWorld](https://github.com/gothinkster/realworld) repo.
 
+### TODO - [Endpoints spec](https://realworld-docs.netlify.app/docs/specs/backend-specs/endpoints/)
+
+- [ ] Authentication Header
+- [ ] Authentication
+- [ ] Registration
+- [ ] Get Current User
+- [ ] Update User
+- [ ] Get Profile
+- [ ] Follow user
+- [ ] Unfollow user
+- [ ] List Articles
+- [ ] Feed Articles
+- [ ] Get Article
+- [ ] Create Article
+- [ ] Update Article
+- [ ] Delete Article
+- [ ] Add Comments to an Article
+- [ ] Get Comments from an Article
+- [ ] Delete Comment
+- [ ] Favorite Article
+- [ ] Unfavorite Article
+- [x] Get Tags
 
 # How it works
 
