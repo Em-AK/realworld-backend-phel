@@ -1,0 +1,9 @@
+(ns realworld\query\core
+  (:require realworld\util\db)
+  (:require realworld\util\repo :as git-repo)
+  (:use \Nulpunkt\Yesql\Repository))
+
+(def query-repo
+  (php/new Repository
+           db/pdo
+           (str git-repo/root-dir "/src/query/queries.sql")))

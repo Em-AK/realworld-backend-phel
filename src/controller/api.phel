@@ -1,16 +1,11 @@
 (ns realworld\controller\api
   (:require phel\http :as h)
   (:require phel\json :as json)
-  (:use \PDO)
-  (:use \Nulpunkt\Yesql\Repository))
+  (:require realworld\query\core :refer [query-repo]))
 
 (defn list-tags [req]
-  (let [root-dir (php/dirname __DIR__ 2)
-        db-url   (str "sqlite:" root-dir "/db/dev.sqlite")
-        pdo      (php/new PDO db-url)
-        query    (php/new Repository pdo (str root-dir "/src/query/queries.sql"))
-        sql-res  (php/-> query (getAllTags))
-        tags     (->> sql-res php-array-to-map (mapcat values))]
+  (let [res  (php/-> query-repo (getAllTags))
+        tags (->> res php-array-to-map (mapcat values))]
     (h/response-from-map
      {:status 200
       :headers {"Content-Type" "application/json; charset=utf-8"}

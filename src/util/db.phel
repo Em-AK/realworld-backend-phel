@@ -1,0 +1,7 @@
+(ns realworld\util\db
+  (:require realworld\util\repo)
+  (:use \PDO))
+
+(def- data-source-name (str "sqlite:" repo/root-dir "/db/dev.sqlite"))
+
+(def pdo (php/new PDO data-source-name))
