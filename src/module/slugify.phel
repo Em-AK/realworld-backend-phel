@@ -1,0 +1,7 @@
+(ns realworld\module\slugify
+  (:use \Cocur\Slugify\Slugify))
+
+(def- slugify-instance (php/new Slugify))
+
+(defn slugify [s]
+  (php/-> slugify-instance (slugify s)))

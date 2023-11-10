@@ -1,0 +1,6 @@
+(ns realworld-tests\module\slugify-test
+  (:require phel\test :refer [deftest is])
+  (:require realworld\module\slugify :refer [slugify]))
+
+(deftest test-slugify
+  (is (= "hello-world" (slugify "Hello World !"))))
