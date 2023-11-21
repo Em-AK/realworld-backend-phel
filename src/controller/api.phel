@@ -1,6 +1,5 @@
 (ns realworld\controller\api
   (:require phel\http :as h)
-  (:require phel\json :as json)
   (:require realworld\query\core :refer [query-repo]))
 
 (defn list-tags [req]
@@ -8,5 +7,4 @@
         tags (->> res php-array-to-map (mapcat values))]
     (h/response-from-map
      {:status 200
-      :headers {"Content-Type" "application/json; charset=utf-8"}
-      :body (json/encode {:tags tags})})))
+      :body {:tags tags}})))

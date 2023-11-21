@@ -1,0 +1,10 @@
+(ns realworld\util\middleware
+  (:require phel\json :as json))
+
+(defn wrap-content-type-json [handler req]
+  (let [res (handler req)]
+    (put-in res [:headers "Content-Type"] "application/json; charset=utf-8")))
+
+(defn wrap-encode-body-as-json [handler req]
+  (let [res (handler req)]
+    (update res :body json/encode)))

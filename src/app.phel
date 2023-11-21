@@ -1,12 +1,13 @@
 (ns realworld\app
-  (:require realworld\controller\api)
+  (:require phel\http :as h)
   (:require phel\router :as r)
-  (:require phel\http :as h))
+  (:require realworld\controller\api)
+  (:require realworld\util\middleware :as m))
 
 (def app
   (r/handler
    (r/router
-    [["/api"
+    [["/api" {:middleware [m/wrap-content-type-json m/wrap-encode-body-as-json]}
       ["/tags" {:get {:handler api/list-tags}}]]])))
 
 (when-not *build-mode*
